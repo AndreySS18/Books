@@ -1,0 +1,38 @@
+﻿@page
+@model Books.Pages.HomePageModel
+@{
+}
+
+<br>
+<h2>List of Charges</h2>
+<a class='btn btn-primary btn-sm' href='/Search/Id'>Поиск по Id</a>
+<a class='btn btn-primary btn-sm' href='/Search/Author'>Поиск по Автору</a>
+<a class='btn btn-primary btn-sm' href='/Search/Title'>Поиск по названию</a>
+<a class='btn btn-primary btn-sm' href='/Search/Publising'>Поиск по издательству</a>
+<a class='btn btn-primary btn-sm' href='/Search/Year'>Поиск по году</a>
+<a class='btn btn-primary btn-sm' href='/Search/Annotation'>Поиск по аннотации</a>
+<table class="table">
+    <thread>
+        <tr>
+            <th>Id</th>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Publishing</th>
+            <th>Year</th>
+            <th>Annotation</th>
+        </tr>
+    </thread>
+    <tbody>
+        @foreach (var item in Model.Books)
+        {
+            <tr>
+                <td >@item.id</td>
+                <td >@item.Author</td>
+                <td >@item.Title</td>
+                <td>@item.Publising</td>
+                <td >@item.Year</td>
+                <td >@item.Annotation</td>
+            </tr>
+        }
+    </tbody>
+</table>
